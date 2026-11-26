@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÁudioLab SM — Protótipo de Sistema Multimídia (Áudio Digital)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Mobile Top Bar -->
+  <div class="mobile-bar">
+    <strong style="color:var(--cyan)">ÁudioLab SM</strong>
+    <button id="mobile-menu-btn" class="btn btn-sm">☰ Menu</button>
+  </div>
+
+  <div class="app-shell">
+    <!-- Non-Linear Navigation Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <img src="midias/logo_audiolab.svg" alt="Logotipo ÁudioLab SM">
+      </div>
+
+      <div>
+        <div class="nav-label">Navegação Não-Linear</div>
+        <nav class="nav-list">
+          <button class="nav-btn active" data-target="mod-home">
+            <span class="nav-icon">🏠</span> Início (Hub)
+          </button>
+          <button class="nav-btn" data-target="mod-captura">
+            <span class="nav-icon">🎙️</span> 1. Captura &amp; Cadeia
+          </button>
+          <button class="nav-btn" data-target="mod-digitalizacao">
+            <span class="nav-icon">📈</span> 2. Amostragem &amp; Vídeo
+          </button>
+          <button class="nav-btn" data-target="mod-tratamento">
+            <span class="nav-icon">🎧</span> 3. Áudio &amp; Formatos
+          </button>
+          <button class="nav-btn" data-target="mod-midi">
+            <span class="nav-icon">🎹</span> 4. Música MIDI
+          </button>
+          <button class="nav-btn" data-target="mod-galeria">
+            <span class="nav-icon">🗂️</span> 5. Glossário &amp; 6 Mídias
+          </button>
+          <button class="nav-btn quiz-cta" data-target="mod-quiz">
+            <span class="nav-icon">🏆</span> QUIZ Interativo
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <strong>Sistemas Multimídia — U2</strong><br>
+        Jonathas Oliveira (01710785)<br>
+        Maverick Martins (01705485)
+      </div>
+    </aside>
+
+    <!-- Main Dynamic Content -->
+    <main class="main-content">
+
+      <!-- ==================== INÍCIO (HUB NÃO-LINEAR) ==================== -->
+      <section id="mod-home" class="module active">
+        <div class="module-header">
+          <span class="kicker">Material Didático Interativo • Navegação Não-Linear</span>
+          <h1>Áudio Digital para Sistemas Multimídia</h1>
+          <p>
+            Bem-vindo ao <strong>ÁudioLab SM</strong>! Explore livremente qualquer módulo na ordem que preferir:
+            entenda como o som analógico é capturado, digitalizado, tratado, comprimido e sintetizado em MIDI,
+            interaja com simuladores ao vivo e teste seus conhecimentos no Quiz multimídia.
+          </p>
+        </div>
+
+        <div class="card" style="border-color:rgba(56,189,248,0.45);">
+          <h2>🎙️ Boas-Vindas Narradas (Voz Original do Grupo)</h2>
+          <p>Ouça a apresentação do <strong>ÁudioLab SM</strong> gravada pela equipe e tratada com filtro passa-alta, equalização, compressão dinâmica e normalização:</p>
+          <audio controls src="midias/narracao_editada.wav" style="width:100%;height:42px;"></audio>
+        </div>
+
+        <div class="card">
+          <h2>🎯 Todas as 6 Mídias Originais Integradas</h2>
+          <p>Clique em qualquer mídia abaixo para ir diretamente ao módulo onde ela é demonstrada (incluindo versão <em>não editada</em> e <em>editada</em>):</p>
+          <div class="media-pills">
+            <button class="media-pill" data-target="mod-captura"><span class="dot"></span> 1. Imagens Matriciais (JPG/PNG)</button>
+            <button class="media-pill" data-target="mod-captura"><span class="dot"></span> 2. Imagens Vetoriais (SVG)</button>
+            <button class="media-pill" data-target="mod-tratamento"><span class="dot"></span> 3. Áudio Digitalizado (WAV)</button>
+            <button class="media-pill" data-target="mod-midi"><span class="dot"></span> 4. Música MIDI (.mid)</button>
+            <button class="media-pill" data-target="mod-digitalizacao"><span class="dot"></span> 5. Vídeo (WebM)</button>
+            <button class="media-pill" data-target="mod-digitalizacao"><span class="dot"></span> 6. Animação (GIF + SVG + Canvas)</button>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="hub-card" data-target="mod-captura">
+            <div class="hub-top"><span class="hub-icon">🎙️</span><span class="tag">Matricial + Vetorial</span></div>
+            <h3>1. Captura &amp; Cadeia ADC/DAC</h3>
+            <p>Explore o setup de gravação com slider Antes/Depois e o diagrama vetorial completo da digitalização.</p>
+          </div>
+
+          <div class="hub-card" data-target="mod-digitalizacao">
+            <div class="hub-top"><span class="hub-icon">📈</span><span class="tag">Animação + Vídeo</span></div>
+            <h3>2. Amostragem, Nyquist &amp; Vídeo</h3>
+            <p>Simulador animado interativo de Aliasing e Quantização, animação GIF e mini-aula em vídeo.</p>
+          </div>
+
+          <div class="hub-card" data-target="mod-tratamento">
+            <div class="hub-top"><span class="hub-icon">🎧</span><span class="tag">Áudio WAV</span></div>
+            <h3>3. Tratamento &amp; Formatos</h3>
+            <p>Ouça áudio bruto vs. tratado, compare 44,1 kHz, 8 kHz e 4 bits, e calcule bitrate de arquivos.</p>
+          </div>
+
+          <div class="hub-card" data-target="mod-midi">
+            <div class="hub-top"><span class="hub-icon">🎹</span><span class="tag">Música MIDI</span></div>
+            <h3>4. Música MIDI na Prática</h3>
+            <p>Player MIDI nativo com Piano Roll ao vivo, controle de BPM sem distorcer tom e mute por faixa.</p>
+          </div>
+
+          <div class="hub-card" data-target="mod-galeria">
+            <div class="hub-top"><span class="hub-icon">🗂️</span><span class="tag">Consulta Rápida</span></div>
+            <h3>5. Glossário &amp; Vitrine Antes/Depois</h3>
+            <p>Busque termos técnicos e visualize todas as 6 mídias originais lado a lado (bruto vs. tratado).</p>
+          </div>
+
+          <div class="hub-card" data-target="mod-quiz" style="border-color:rgba(167,139,250,0.45);">
+            <div class="hub-top"><span class="hub-icon">🏆</span><span class="tag" style="color:var(--purple);background:rgba(167,139,250,0.16)">20 Questões</span></div>
+            <h3>QUIZ Interativo Multimídia</h3>
+            <p>Base de 20 questões (com áudio e diagramas), sorteio aleatório de 5+ perguntas e percentual de acerto.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== MÓDULO 1: CAPTURA & CADEIA ==================== -->
+      <section id="mod-captura" class="module">
+        <div class="module-header">
+          <span class="kicker">Módulo 1 • Imagens Matriciais &amp; Vetoriais</span>
+          <h1>Captura Sonora e Cadeia de Digitalização</h1>
+          <p>
+            O som no mundo real é uma <strong>onda mecânica contínua (analógica)</strong>. Para que um sistema multimídia
+            armazene e manipule áudio, é preciso capturá-lo com um transdutor (microfone) e convertê-lo em bits via <strong>ADC</strong>.
+          </p>
+        </div>
+
+        <!-- Raster Before/After Interactive Slider -->
+        <div class="card">
+          <h2>📷 Imagem Matricial: Setup de Captura (Antes vs. Depois)</h2>
+          <p>
+            Arraste o controle abaixo para comparar a <strong>fotografia original não editada</strong> (<code>foto_setup_bruta.jpg</code>)
+            com a <strong>imagem matricial tratada</strong> (<code>foto_setup_editada.png</code> — recorte 16:9, balanço de brilho/contraste/saturação e anotações técnicas dos equipamentos).
+          </p>
+
+          <div id="ba-container" class="ba-container">
+            <img src="midias/foto_setup_editada.png" alt="Imagem matricial editada do setup de áudio">
+            <div id="ba-overlay" class="ba-overlay">
+              <img id="ba-overlay-img" src="midias/foto_setup_bruta.jpg" alt="Imagem matricial bruta não editada">
+            </div>
+            <span class="ba-label left">ANTES (Não editada)</span>
+            <span class="ba-label right">DEPOIS (Tratada + Anotada)</span>
+          </div>
+          <div class="ba-slider-bar">
+            <span>Ver Editada (0%)</span>
+            <input id="ba-range" type="range" min="0" max="100" value="50">
+            <span>Ver Bruta (100%)</span>
+          </div>
+        </div>
+
+        <!-- Vector Diagram Toggle -->
+        <div class="card">
+          <h2>🎨 Imagem Vetorial (SVG): Cadeia Analógico → Digital → Analógico</h2>
+          <p>
+            Diferente das imagens matriciais (grade de pixels), desenhos vetoriais em <strong>SVG</strong> são definidos por equações geométricas e mantêm nitidez perfeita em qualquer ampliação.
+          </p>
+          <div class="toggle-group">
+            <button class="toggle-btn active" data-svg-cadeia="midias/cadeia_audio_final.svg" data-caption="Versão final editada (cadeia_audio_final.svg): hierarquia visual, ícones vetoriais, gradientes e divisão entre domínios analógico e digital.">Versão Editada (Final)</button>
+            <button class="toggle-btn" data-svg-cadeia="midias/cadeia_audio_rascunho.svg" data-caption="Versão não editada (cadeia_audio_rascunho.svg): diagrama inicial em blocos monocromáticos usado como rascunho estrutural.">Versão Não Editada (Rascunho)</button>
+          </div>
+          <div class="media-frame">
+            <img id="img-svg-cadeia" src="midias/cadeia_audio_final.svg" alt="Diagrama vetorial da cadeia de áudio digital">
+            <div id="cap-svg-cadeia" class="media-caption">Versão final editada (cadeia_audio_final.svg): hierarquia visual, ícones vetoriais, gradientes e divisão entre domínios analógico e digital.</div>
+          </div>
+        </div>
+
+        <!-- Animated SVG Flow -->
+        <div class="card">
+          <h2>✨ Animação Vetorial (SVG): Sinal em Movimento</h2>
+          <p>Observe os pulsos contínuos entrando no <strong>ADC</strong>, transformando-se em pacotes binários (<code>10110</code>) e sendo reconstruídos no <strong>DAC</strong>:</p>
+          <div class="media-frame">
+            <object data="midias/animacao_fluxo_adc.svg" type="image/svg+xml" style="width:100%;max-width:760px;height:185px;"></object>
+          </div>
+        </div>
+
+        <div class="nav-footer">
+          <button class="btn" data-target="mod-home">← Hub Não-Linear</button>
+          <button class="btn btn-primary" data-target="mod-digitalizacao">Explorar Amostragem &amp; Vídeo →</button>
+        </div>
+      </section>
+
+      <!-- ==================== MÓDULO 2: DIGITALIZAÇÃO, ANIMAÇÃO & VÍDEO ==================== -->
+      <section id="mod-digitalizacao" class="module">
+        <div class="module-header">
+          <span class="kicker">Módulo 2 • Animação, Vídeo &amp; Simulador ao Vivo</span>
+          <h1>Amostragem (Nyquist), Quantização e Mini-Aula em Vídeo</h1>
+          <p>
+            Digitalizar som exige discretizar dois eixos: o <strong>tempo</strong> (Taxa de Amostragem em Hz) e a
+            <strong>amplitude</strong> (Profundidade de Bits). Experimente o simulador animado abaixo e assista à mini-aula!
+          </p>
+        </div>
+
+        <!-- Interactive Canvas Animation Simulator -->
+        <div class="card">
+          <h2>🧪 Simulador Animado Interativo: Amostragem, Aliasing e Quantização</h2>
+          <p>Reduza a <strong>Taxa de Amostragem</strong> para menos do dobro da frequência do sinal e veja o <strong>Aliasing</strong> surgir ao vivo! Ou diminua os <strong>Bits</strong> e clique em <em>Ouvir Som Quantizado</em>.</p>
+
+          <canvas id="nyquist-canvas" class="sim-canvas"></canvas>
+
+          <div class="controls-grid">
+            <div class="control-box">
+              <label><span>Frequência do Sinal (f)</span><strong id="sim-freq-val">3 Hz</strong></label>
+              <input id="sim-freq" type="range" min="1" max="10" value="3">
+            </div>
+            <div class="control-box">
+              <label><span>Taxa de Amostragem (fs)</span><strong id="sim-fs-val">18 Hz</strong></label>
+              <input id="sim-fs" type="range" min="4" max="36" value="18">
+            </div>
+            <div class="control-box">
+              <label><span>Profundidade de Bits</span><strong id="sim-bits-val">4 bits</strong></label>
+              <input id="sim-bits" type="range" min="2" max="8" value="4">
+            </div>
+          </div>
+
+          <div id="sim-nyquist-banner" class="status-banner status-ok"></div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+            <button id="sim-play-tone" class="btn btn-emerald">🔊 Ouvir Som Quantizado (Web Audio)</button>
+            <button id="sim-toggle-anim" class="btn">⏸ Pausar Animação</button>
+          </div>
+        </div>
+
+        <!-- GIF Animation Before/After -->
+        <div class="card">
+          <h2>🎞️ Animação Exportada (GIF): Antes vs. Depois</h2>
+          <p>Comparação entre o rascunho animado quadro a quadro em baixa fluidez (4 FPS) e a animação final suavizada (20 FPS) com grade de quantização e amostras discretas:</p>
+          <div class="grid-2">
+            <div class="media-frame">
+              <span class="badge badge-raw" style="margin-bottom:8px;">NÃO EDITADA — 4 FPS (animacao_onda_bruta.gif)</span>
+              <img src="midias/animacao_onda_bruta.gif" alt="Animação GIF bruta a 4 FPS">
+              <div class="media-caption">6 quadros em preto e branco, sem suavização temporal e sem representação dos níveis de quantização.</div>
+            </div>
+            <div class="media-frame">
+              <span class="badge badge-edit" style="margin-bottom:8px;">EDITADA — 20 FPS (animacao_onda_editada.gif)</span>
+              <img src="midias/animacao_onda_editada.gif" alt="Animação GIF editada a 20 FPS">
+              <div class="media-caption">32 quadros fluidos mostrando simultaneamente a onda contínua (ciano), amostras (amarelo/verde) e degrau quantizado (roxo).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Mini-Lesson (Raw vs Edited) -->
+        <div class="card">
+          <h2>🎬 Vídeo Educacional: Como o Som Vira Bits (Bruto vs. Editado)</h2>
+          <p>Alterne entre a captura de vídeo bruta (sem corte, com ruído e sem legendas) e a mini-aula editada (com abertura, animações sincronizadas, legendas didáticas e trilha sonora):</p>
+          <div class="toggle-group">
+            <button class="toggle-btn active" data-vid-src="midias/video_editado.webm" data-caption="Versão Editada (video_editado.webm): vinheta de abertura, demonstração de amostragem/quantização, legendas didáticas e trilha musical limpa.">Vídeo Editado (Final)</button>
+            <button class="toggle-btn" data-vid-src="midias/video_bruto.webm" data-caption="Versão Não Editada (video_bruto.webm): captura crua sem cortes, sem identidade visual, sem legendas e com zumbido de 60 Hz no áudio.">Vídeo Bruto (Não Editado)</button>
+          </div>
+          <div class="media-frame">
+            <video id="main-video" controls preload="metadata" style="max-height:420px;width:100%;" src="midias/video_editado.webm"></video>
+            <div id="video-caption" class="media-caption">Versão Editada (video_editado.webm): vinheta de abertura, demonstração de amostragem/quantização, legendas didáticas e trilha musical limpa.</div>
+          </div>
+        </div>
+
+        <!-- Vector Nyquist Diagram -->
+        <div class="card">
+          <h2>📐 Diagrama Vetorial: Nyquist vs. Aliasing</h2>
+          <div class="toggle-group">
+            <button class="toggle-btn active" data-svg-nyquist="midias/nyquist_final.svg">Editado (nyquist_final.svg)</button>
+            <button class="toggle-btn" data-svg-nyquist="midias/nyquist_rascunho.svg">Rascunho (nyquist_rascunho.svg)</button>
+          </div>
+          <div class="media-frame">
+            <img id="img-svg-nyquist" src="midias/nyquist_final.svg" alt="Diagrama vetorial do Teorema de Nyquist">
+          </div>
+        </div>
+
+        <div class="nav-footer">
+          <button class="btn" data-target="mod-captura">← Captura &amp; Cadeia</button>
+          <button class="btn btn-primary" data-target="mod-tratamento">Explorar Áudio &amp; Formatos →</button>
+        </div>
+      </section>
+
+      <!-- ==================== MÓDULO 3: ÁUDIO DIGITALIZADO & FORMATOS ==================== -->
+      <section id="mod-tratamento" class="module">
+        <div class="module-header">
+          <span class="kicker">Módulo 3 • Áudio Digitalizado (WAV) &amp; Formas de Onda</span>
+          <h1>Tratamento de Áudio, Taxas e Compressão</h1>
+          <p>
+            Ouça na prática a diferença entre uma captura bruta e um áudio tratado (redução de ruído, corte de silêncio e normalização),
+            compare resoluções digitais e calcule o tamanho de arquivos PCM, FLAC e MP3.
+          </p>
+        </div>
+
+        <!-- Real Group Voice Before / After -->
+        <div class="card" style="border-color:rgba(52,211,153,0.45);">
+          <h2>🎙️ Narração Original do Grupo: Antes e Depois do Tratamento</h2>
+          <p>Gravação real da voz da equipe comparando o arquivo bruto capturado com a versão tratada (corte de silêncio, filtro passa-alta 85 Hz, realce de presença em 3,2 kHz, compressão dinâmica 3:1 e normalização a -1 dBFS):</p>
+          <div class="grid-2">
+            <div class="audio-box">
+              <span class="badge badge-raw">ANTES — Voz Bruta (narracao_bruta.wav)</span>
+              <img src="midias/forma_onda_narracao_bruta.png" alt="Forma de onda da narração bruta" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+              <audio controls src="midias/narracao_bruta.wav"></audio>
+              <p style="font-size:0.84rem;margin:0;color:var(--muted);">
+                Dinâmica irregular: pico inicial muito alto enquanto o corpo da fala permanece com volume reduzido e sem equalização.
+              </p>
+            </div>
+            <div class="audio-box">
+              <span class="badge badge-edit">DEPOIS — Voz Tratada (narracao_editada.wav)</span>
+              <img src="midias/forma_onda_narracao_editada.png" alt="Forma de onda da narração editada" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+              <audio controls src="midias/narracao_editada.wav"></audio>
+              <p style="font-size:0.84rem;margin:0;color:var(--muted);">
+                Voz nivelada, limpa e mais inteligível: silêncios aparados, graves indesejados filtrados e volume consistente em toda a fala.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px;">🧪 Teste na Própria Voz: Efeito de Amostragem e Quantização</h3>
+          <div class="grid-3" style="margin-top:8px;">
+            <div class="audio-box">
+              <span class="badge badge-edit">Voz 44,1 kHz / 16 bits</span>
+              <audio controls src="midias/narracao_editada.wav"></audio>
+              <p style="font-size:0.82rem;margin:0;">Qualidade de CD: voz nítida e natural.</p>
+            </div>
+            <div class="audio-box">
+              <span class="badge badge-raw">Voz 8 kHz (Telefonia)</span>
+              <audio controls src="midias/narracao_8khz_telefonia.wav"></audio>
+              <p style="font-size:0.82rem;margin:0;">Taxa reduzida a 8 kHz: som abafado de ligação telefônica.</p>
+            </div>
+            <div class="audio-box">
+              <span class="badge badge-raw">Voz 4 bits (16 níveis)</span>
+              <audio controls src="midias/narracao_4bit_quantizacao.wav"></audio>
+              <p style="font-size:0.82rem;margin:0;">Apenas 16 degraus de amplitude: forte chiado de quantização.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio Before / After + Waveform PNGs -->
+        <div class="card">
+          <h2>🔊 Amostra Musical Digitalizada: Remoção de Ruído de 60 Hz</h2>
+          <div class="grid-2">
+            <div class="audio-box">
+              <span class="badge badge-raw">ANTES — Não Editado (amostra_bruta_com_ruido.wav)</span>
+              <img src="midias/forma_onda_bruta.png" alt="Forma de onda matricial do áudio bruto" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+              <audio controls src="midias/amostra_bruta_com_ruido.wav"></audio>
+              <p style="font-size:0.84rem;margin:0;color:var(--muted);">
+                Problemas: 0,8s de silêncio com ruído no início (destacado em vermelho), zumbido de rede elétrica (60 Hz), chiado constante e amplitude baixa.
+              </p>
+            </div>
+
+            <div class="audio-box">
+              <span class="badge badge-edit">DEPOIS — Tratado (amostra_tratada_limpa.wav)</span>
+              <img src="midias/forma_onda_editada.png" alt="Forma de onda matricial do áudio tratado" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+              <audio controls src="midias/amostra_tratada_limpa.wav"></audio>
+              <p style="font-size:0.84rem;margin:0;color:var(--muted);">
+                Tratamento aplicado: corte dos trechos ociosos, remoção do ruído/zumbido e normalização de pico para -1 dBFS (sem clipping).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auditory Comparison Lab -->
+        <div class="card">
+          <h2>👂 Laboratório Auditivo: Efeito da Taxa de Amostragem e dos Bits</h2>
+          <p>Dê play nas 3 versões do mesmo trecho musical para ouvir o impacto real de cada parâmetro:</p>
+          <div class="grid-3">
+            <div class="audio-box">
+              <span class="badge badge-edit">Padrão CD: 44,1 kHz / 16 bits</span>
+              <audio controls src="midias/comparacao_44khz_16bit.wav"></audio>
+              <p style="font-size:0.82rem;margin:0;">65.536 níveis de amplitude e resposta até ~22 kHz. Som limpo e brilhante.</p>
+            </div>
+            <div class="audio-box">
+              <span class="badge badge-raw">Baixa Amostragem: 8 kHz / 16 bits</span>
+              <audio controls src="midias/comparacao_8khz_16bit.wav"></audio>
+              <p style="font-size:0.82rem;margin:0;">Qualidade de telefonia: perde os harmônicos agudos (limite de Nyquist cai para 4 kHz).</p>
+            </div>
+            <div class="audio-box">
+              <span class="badge badge-raw">Baixos Bits: 44,1 kHz / 4 bits</span>
+              <audio controls src="midias/comparacao_44khz_4bit.wav"></audio>
+              <p style="font-size:0.82rem;margin:0;">Apenas 16 níveis de amplitude: gera forte chiado granulado (erro de quantização).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bitrate & Format Comparison Calculator -->
+        <div class="card">
+          <h2>🧮 Calculadora de Bitrate e Comparativo de Formatos</h2>
+          <p>Fórmula PCM: <code>Bitrate = Taxa de Amostragem × Profundidade de Bits × Canais</code></p>
+          <div class="grid-2" style="margin-bottom:14px;">
+            <div class="control-box">
+              <label><span>Taxa de Amostragem</span></label>
+              <select id="calc-sr" class="quiz-select" style="width:100%;">
+                <option value="8000">8.000 Hz (Telefonia)</option>
+                <option value="22050">22.050 Hz (Rádio AM/Web leve)</option>
+                <option value="44100" selected>44.100 Hz (Padrão CD)</option>
+                <option value="48000">48.000 Hz (Vídeo / Cinema)</option>
+                <option value="96000">96.000 Hz (Estúdio Hi-Res)</option>
+              </select>
+            </div>
+            <div class="control-box">
+              <label><span>Profundidade de Bits &amp; Canais</span></label>
+              <div style="display:flex;gap:8px;">
+                <select id="calc-bits" class="quiz-select" style="flex:1;">
+                  <option value="8">8 bits</option>
+                  <option value="16" selected>16 bits</option>
+                  <option value="24">24 bits</option>
+                </select>
+                <select id="calc-ch" class="quiz-select" style="flex:1;">
+                  <option value="1">Mono (1 ch)</option>
+                  <option value="2" selected>Estéreo (2 ch)</option>
+                </select>
+                <input id="calc-min" type="number" min="1" max="120" value="3" class="quiz-select" style="width:85px;" title="Duração em minutos">
+              </div>
+            </div>
+          </div>
+
+          <div class="midi-stats">
+            <div class="stat-pill"><small>Bitrate PCM</small><strong id="calc-res-kbps">1.411 kbps</strong></div>
+            <div class="stat-pill"><small>WAV (Sem compressão)</small><strong id="calc-res-wav">30.3 MB</strong></div>
+            <div class="stat-pill"><small>FLAC (Lossless ~55%)</small><strong id="calc-res-flac">~16.7 MB</strong></div>
+            <div class="stat-pill"><small>MP3 (Lossy 192 kbps)</small><strong id="calc-res-mp3">~4.1 MB</strong></div>
+          </div>
+
+          <table class="data-table" style="margin-top:16px;">
+            <thead>
+              <tr><th>Categoria</th><th>Formatos</th><th>Característica Principal</th><th>Uso Ideal</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Sem Compressão</strong></td><td>WAV, AIFF (PCM)</td><td>Guarda todas as amostras brutas sem redução.</td><td>Gravação, edição e masterização.</td></tr>
+              <tr><td><strong>Compressão Sem Perdas</strong></td><td>FLAC, ALAC</td><td>Reduz ~40–50% mantendo 100% dos bits originais.</td><td>Arquivamento e streaming Hi-Fi.</td></tr>
+              <tr><td><strong>Compressão Com Perdas</strong></td><td>MP3, AAC, OGG, Opus</td><td>Usa psicoacústica para descartar frequências menos audíveis.</td><td>Streaming web, podcasts, jogos e apps.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="nav-footer">
+          <button class="btn" data-target="mod-digitalizacao">← Amostragem &amp; Vídeo</button>
+          <button class="btn btn-primary" data-target="mod-midi">Explorar Música MIDI →</button>
+        </div>
+      </section>
+
+      <!-- ==================== MÓDULO 4: MÚSICA MIDI ==================== -->
+      <section id="mod-midi" class="module">
+        <div class="module-header">
+          <span class="kicker">Módulo 4 • Música MIDI (.mid) &amp; Sintetizador Web</span>
+          <h1>Música MIDI vs. Áudio Digitalizado</h1>
+          <p>
+            Um arquivo <strong>MIDI (.mid)</strong> não guarda a gravação do som, mas sim uma <em>partitura digital</em> com eventos
+            (nota ligada/desligada, intensidade/velocity, canal e instrumento). Por isso ocupa apenas ~1 KB e permite alterar BPM e faixas em tempo real!
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>🎹 Player MIDI Nativo com Visualizador Piano Roll</h2>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;">
+            <div class="toggle-group" style="margin:0;">
+              <button class="toggle-btn active" data-midi-preset="trilha_completa.mid">Editado: Trilha 3 Faixas (trilha_completa.mid)</button>
+              <button class="toggle-btn" data-midi-preset="trilha_rascunho.mid">Não Editado: Rascunho 1 Faixa (trilha_rascunho.mid)</button>
+            </div>
+            <label class="btn btn-sm" style="cursor:pointer;">
+              📂 Testar outro .mid
+              <input id="midi-upload" type="file" accept=".mid,.midi" style="display:none;">
+            </label>
+          </div>
+
+          <canvas id="midi-canvas" class="sim-canvas" style="height:220px;"></canvas>
+
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px;">
+            <button id="midi-play" class="btn btn-primary">▶ Reproduzir MIDI</button>
+            <button id="midi-stop" class="btn">⏹ Parar</button>
+            <div style="display:flex;align-items:center;gap:8px;margin-left:auto;min-width:230px;">
+              <span style="font-size:0.85rem;color:var(--muted);">Andamento:</span>
+              <input id="midi-tempo" type="range" min="60" max="150" value="100" style="accent-color:var(--cyan);flex:1;">
+              <strong id="midi-tempo-val" style="color:var(--cyan);font-size:0.9rem;">100%</strong>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <small style="color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;">Ativar / Silenciar Faixas MIDI:</small>
+            <div id="midi-track-toggles" class="midi-tracks"></div>
+          </div>
+
+          <div class="midi-stats">
+            <div class="stat-pill"><small>Tamanho do .mid</small><strong id="midi-stat-size">—</strong></div>
+            <div class="stat-pill"><small>Faixas com Notas</small><strong id="midi-stat-tracks">—</strong></div>
+            <div class="stat-pill"><small>Total de Eventos</small><strong id="midi-stat-notes">—</strong></div>
+            <div class="stat-pill"><small>Andamento Atual</small><strong id="midi-stat-bpm">—</strong></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>⚖️ Comparativo Direto: MIDI vs. WAV</h2>
+          <table class="data-table">
+            <thead>
+              <tr><th>Critério</th><th>Áudio Digitalizado (WAV / MP3)</th><th>Música MIDI (.mid)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>O que armazena?</strong></td><td>Amostras da forma de onda sonora.</td><td>Instruções simbólicas (notas, duração, velocity, timbre).</td></tr>
+              <tr><td><strong>Tamanho típico (este projeto)</strong></td><td><code>amostra_tratada_limpa.wav</code> ≈ 352 KB (4s)</td><td><code>trilha_completa.mid</code> ≈ 1,0 KB (32s, 3 faixas!)</td></tr>
+              <tr><td><strong>Grava voz humana?</strong></td><td>Sim, qualquer som acústico.</td><td>Não — apenas instrumentos/sintetizadores controláveis.</td></tr>
+              <tr><td><strong>Mudar BPM sem distorcer tom</strong></td><td>Exige processamento DSP complexo.</td><td>Nativo e instantâneo (teste no slider acima!).</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="nav-footer">
+          <button class="btn" data-target="mod-tratamento">← Áudio &amp; Formatos</button>
+          <button class="btn btn-primary" data-target="mod-galeria">Glossário &amp; Vitrine das 6 Mídias →</button>
+        </div>
+      </section>
+
+      <!-- ==================== MÓDULO 5: GLOSSÁRIO & VITRINE 6 MÍDIAS ==================== -->
+      <section id="mod-galeria" class="module">
+        <div class="module-header">
+          <span class="kicker">Módulo 5 • Consulta Rápida &amp; Inventário</span>
+          <h1>Glossário Técnico &amp; Vitrine das 6 Mídias Originais</h1>
+          <p>Pesquise qualquer conceito de áudio digital e confira o resumo completo de todas as mídias produzidas (não editadas e editadas) entregues junto ao protótipo.</p>
+        </div>
+
+        <div class="card">
+          <h2>📋 Inventário das 6 Mídias Obrigatórias (Bruto vs. Editado)</h2>
+          <table class="data-table">
+            <thead>
+              <tr><th>Tipo de Mídia</th><th>Material Não Editado (Bruto)</th><th>Material Editado (Final)</th><th>Acesso</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Imagens Matriciais</strong></td>
+                <td><code>foto_setup_bruta.jpg</code><br><code>forma_onda_bruta.png</code></td>
+                <td><code>foto_setup_editada.png</code><br><code>forma_onda_editada.png</code></td>
+                <td><button class="btn btn-sm" data-target="mod-captura">Ver</button></td>
+              </tr>
+              <tr>
+                <td><strong>2. Imagens Vetoriais</strong></td>
+                <td><code>cadeia_audio_rascunho.svg</code><br><code>nyquist_rascunho.svg</code></td>
+                <td><code>cadeia_audio_final.svg</code><br><code>nyquist_final.svg</code> / <code>logo_audiolab.svg</code></td>
+                <td><button class="btn btn-sm" data-target="mod-captura">Ver</button></td>
+              </tr>
+              <tr>
+                <td><strong>3. Áudio Digitalizado</strong></td>
+                <td><code>narracao_bruta_original.ogg</code> / <code>narracao_bruta.wav</code><br><code>amostra_bruta_com_ruido.wav</code></td>
+                <td><code>narracao_editada.wav</code> (+ 8kHz e 4-bit)<br><code>amostra_tratada_limpa.wav</code> (+ comparações)</td>
+                <td><button class="btn btn-sm" data-target="mod-tratamento">Ouvir</button></td>
+              </tr>
+              <tr>
+                <td><strong>4. Música MIDI</strong></td>
+                <td><code>trilha_rascunho.mid</code> (1 faixa)</td>
+                <td><code>trilha_completa.mid</code> (3 faixas)</td>
+                <td><button class="btn btn-sm" data-target="mod-midi">Tocar</button></td>
+              </tr>
+              <tr>
+                <td><strong>5. Vídeo</strong></td>
+                <td><code>video_bruto.webm</code></td>
+                <td><code>video_editado.webm</code></td>
+                <td><button class="btn btn-sm" data-target="mod-digitalizacao">Assistir</button></td>
+              </tr>
+              <tr>
+                <td><strong>6. Animação</strong></td>
+                <td><code>animacao_onda_bruta.gif</code> (4 FPS)</td>
+                <td><code>animacao_onda_editada.gif</code> (20 FPS) + <code>animacao_fluxo_adc.svg</code> + Canvas</td>
+                <td><button class="btn btn-sm" data-target="mod-digitalizacao">Ver</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>📖 Glossário Interativo de Áudio Digital</h2>
+          <input id="glossary-search" class="search-input" type="search" placeholder="🔎 Filtrar termo (ex.: Nyquist, MIDI, Aliasing, Bitrate, FLAC)...">
+          <div id="glossary-list" class="grid-2"></div>
+        </div>
+
+        <div class="nav-footer">
+          <button class="btn" data-target="mod-midi">← Música MIDI</button>
+          <button class="btn btn-primary" data-target="mod-quiz">Ir para o QUIZ Interativo 🏆</button>
+        </div>
+      </section>
+
+      <!-- ==================== QUIZ INTERATIVO ==================== -->
+      <section id="mod-quiz" class="module">
+        <div class="module-header">
+          <span class="kicker">Avaliação Interativa • Sorteio Dinâmico</span>
+          <h1>QUIZ Interativo — Áudio Digital</h1>
+          <p>
+            Teste seus conhecimentos com perguntas sorteadas aleatoriamente de uma base de
+            <strong id="quiz-bank-count">20</strong> questões (incluindo múltipla escolha, verdadeiro/falso,
+            questões auditivas com áudio real e questões visuais com diagramas). Ao final, veja seu <strong>percentual de acerto</strong>!
+          </p>
+        </div>
+
+        <div id="quiz-intro" class="card">
+          <h2>🎲 Configurar Nova Rodada</h2>
+          <p>A cada execução, o sistema sorteia perguntas diferentes da base de 20 questões (mínimo obrigatório: 5 perguntas).</p>
+          <div class="quiz-setup">
+            <label for="quiz-count" style="font-weight:600;">Quantidade de perguntas sorteadas:</label>
+            <select id="quiz-count" class="quiz-select">
+              <option value="5" selected>5 perguntas (padrão rápido)</option>
+              <option value="8">8 perguntas</option>
+              <option value="10">10 perguntas</option>
+              <option value="15">15 perguntas</option>
+            </select>
+            <button id="quiz-start-btn" class="btn btn-primary">▶ Iniciar QUIZ Agora</button>
+          </div>
+        </div>
+
+        <div id="quiz-stage" style="display:none;"></div>
+        <div id="quiz-result" style="display:none;"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/midi-data.js"></script>
+  <script src="js/midi-player.js"></script>
+  <script src="js/simulators.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

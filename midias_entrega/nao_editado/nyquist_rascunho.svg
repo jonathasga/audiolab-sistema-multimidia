@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <rect width="800" height="240" fill="#fff"/>
+  <text x="400" y="28" font-family="Arial" font-size="15" text-anchor="middle" fill="#222">Rascunho: Nyquist vs Aliasing</text>
+  <rect x="25" y="50" width="360" height="165" fill="none" stroke="#666"/>
+  <rect x="415" y="50" width="360" height="165" fill="none" stroke="#666"/>
+  <line x1="35" y1="132" x2="375" y2="132" stroke="#aaa"/>
+  <line x1="425" y1="132" x2="765" y2="132" stroke="#aaa"/>
+  <path d="M 40 132 Q 80 65, 120 132 T 200 132 T 280 132 T 360 132" fill="none" stroke="#222" stroke-width="2"/>
+  <path d="M 430 132 Q 470 65, 510 132 T 590 132 T 670 132 T 750 132" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <path d="M 430 132 Q 590 75, 750 132" fill="none" stroke="#222" stroke-width="2"/>
+  <text x="205" y="205" font-family="Arial" font-size="12" text-anchor="middle">fs &gt;= 2 * fmax (OK)</text>
+  <text x="595" y="205" font-family="Arial" font-size="12" text-anchor="middle">fs &lt; 2 * fmax (Aliasing)</text>
+</svg>
